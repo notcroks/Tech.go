@@ -23,7 +23,7 @@ module.exports = ({develop}) => ({
           template: './src/index.html'
       }),
       new MiniCssExtractPlugin({
-          filename: './src/styles/main.scss'
+          filename: './styles/main.scss'
       })
   ],
   module: {
