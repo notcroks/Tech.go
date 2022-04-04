@@ -9,9 +9,6 @@ $ns: 'Nunito Sans', sans-serif;
 
 html {
     font-size: 10px;
-    @media (max-width:$r_mob_500) {
-        font-size: 8px;
-    }
 }
  
 .wrapper {
@@ -44,8 +41,8 @@ body {
 
     &__link {
         padding: 2.4rem 0;
-        border: 1px solid rgba($green, 0.5);
-        color: rgba($green, 0.5);
+        border: 1px solid rgba($title, 0.5);
+        color: rgba($title, 0.5);
         font-size: 1.8rem;
         text-decoration: none;
         border-radius: 4rem;
@@ -54,8 +51,8 @@ body {
         
 
         &:hover {
-            border: 1px solid $orange;
-            color: $orange;
+            border: 1px solid $title;
+            color: $title;
             box-shadow: none
         }
     }
