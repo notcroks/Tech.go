@@ -29,7 +29,36 @@ body {
     color: $text;
 }
 
+.header {
+    max-width: 1310px;
+    margin: 0 auto 5rem;
+    padding: 4.5rem 15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-basis: 80%;
 
+    &__button {
+        display: block;
+        width: 3.2rem;
+        height: 3.2rem;
+        background-image: url(../images/account.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        cursor: pointer;
+        flex-basis: 12rem;
+    }
+}
+
+.logo {
+    display: block;
+    background-image: url(../images/logo.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 3.3rem;
+    flex-basis: 12rem;
+    cursor: pointer;
+}
 
 
 
