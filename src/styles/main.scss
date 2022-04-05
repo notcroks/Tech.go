@@ -39,16 +39,20 @@ h1, h2, h3 {
 h1 {
     font-size: 3.6rem;
     font-weight: 700;
+    margin-bottom: 3rem;
 }
 
 h2 {
     font-size: 2.4rem;
     font-weight: 600;
+    margin-bottom: 3rem;
 }
 
 h3 {
     font-size: 1.8rem;
     font-weight: 700;
+    margin-top: 0.6rem;
+    margin-bottom: 1.1rem;
 }
 
 .span {
@@ -62,6 +66,8 @@ h3 {
     &__size-xs {
         font-size: 1.4rem;
         font-weight: 600;
+        line-height: 136%;
+        margin-bottom: 1rem;
     }
 
     &__size-s {
@@ -114,18 +120,99 @@ h3 {
     padding-right: 15px;
 }
 
+.tabs {
+    font-size: 0;
+    max-width: 665px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tabs>input[type="radio"] {
+    display: none;
+}
+
+.tabs>div {
+    /* скрыть контент по умолчанию */
+    display: none;
+    border: none;
+    margin: 10px 10px;
+    font-size: 16px;
+    height: 419px;
+}
+
+/* отобразить контент, связанный с вабранной радиокнопкой (input type="radio") */
+#tab-btn-1:checked~#content-1,
+#tab-btn-2:checked~#content-2,
+#tab-btn-3:checked~#content-3,
+#tab-btn-4:checked~#content-4 {
+display: block;
+}
+
+.tabs>label {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 2rem;
+    margin: 2px 8px;
+    font-size: 16px;
+    line-height: 1.5;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+    cursor: pointer;
+    position: relative;
+    top: 1px;
+    height: 97px;
+}
+
+.tabs>label:not(:first-of-type) {
+    border-left: none;
+}
+
+.tabs>input[type="radio"]:checked+label {
+    background-color: #fff;
+    border-bottom: none;
+}
+
+
+.photo {
+    width: 148px;
+    height: 98px;
+
+    &__size {
+        width: 100%;
+        border-radius: 1.5rem;
+    }
+
+    &__shadow {
+        box-shadow: 0 0 5rem;
+        border-radius: 2.5rem;
+    }
+
+    &__radius {
+        border-radius: 2.5rem;
+    }
+}
+
 .about{
 
     &-box {
         display: flex;
-        gap: 12%;
+        gap: 1%;
         align-items: center;
         justify-content: space-between;
         padding-top: 4.4rem;
 
+        &__info {
+            position: relative;
+        }
+
         &__description {
             font-size: 2.4rem;
             font-weight: 600;
+            line-height: 136%;
+            margin-bottom: 2rem;
         }
 
         &__list {
@@ -133,7 +220,8 @@ h3 {
             justify-content: space-between;
             align-items: center;
             padding-left: 0;
-            margin-top: 3rem;
+            margin-top: 3.5rem;
+            margin-bottom: 0;
             list-style: none;
         }
 
@@ -163,6 +251,114 @@ h3 {
                 transition: 0.3s;
             }
         }
+
+        &__list1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-left: 0;
+            margin-top: 3rem;
+            list-style: none;
+            position: relative;
+        }
+
+        &__location1 {
+            text-decoration: none;
+            color:$title;
+            font-size: 2.4rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            transition: 0.3s;
+            
+            &::before {
+                content: '';
+                display: block;
+                width: 2rem;
+                height: 2rem;
+                background-position: center center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                border: 1px solid rgba(174, 174, 174, 0.2);
+                background-color: rgba(174, 174, 174, 0.5);
+                border-radius: 100%;
+                position: absolute;
+                right: 10.5rem;
+                background-image: url(../images/calendar.svg);
+                background-size: 12px 12px;
+            }
+        }
+
+        &__location2 {
+            text-decoration: none;
+            color:$title;
+            font-size: 2.4rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            transition: 0.3s;
+            
+            &::before {
+                content: '';
+                display: block;
+                width: 2rem;
+                height: 2rem;
+                background-position: center center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                border: 1px solid rgba(174, 174, 174, 0.2);
+                background-color: rgba(174, 174, 174, 0.5);
+                border-radius: 100%;
+                position: absolute;
+                right: 11.5rem;
+                background-image: url(../images/person.svg);
+                background-size: 9px 12px;
+            }
+        }
+
+        &__all {
+            display: flex;
+            gap: 5rem;
+            align-items: center;
+            justify-content: center;
+            margin-top: 4rem;
+            margin-bottom: 4rem;
+            border: 1px solid rgba(174, 174, 174, 0.2);
+            color: #aeaeae;
+            font-size: 1.8rem;
+            text-decoration: none;
+            border-radius: 3rem;
+            box-shadow: 0 0 5rem;
+
+            &::before {
+                content: " ";
+                background: $text;
+                width: 1px;
+                height: 66px;
+                position: absolute;
+                left: 20.5rem;
+            }
+        }
+
+        &__month {
+            border: none;
+            font-size: 1.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            color: $text;
+            height: 34px;
+        }
+
+        &__person {
+            margin-bottom: 1.5rem;
+        }
+
+        &__calendar {
+            margin-bottom: 1.5rem;
+        }
     }
 
     &__link {
@@ -188,11 +384,32 @@ h3 {
 
 }
 
+.quantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    &__button {
+        font-size: 3rem;
+        font-weight: 600;
+    }
+
+    &__person {
+        font-size: 1.5rem;
+        font-weight: 600;
+        max-width: 8.2rem;
+        border: none;
+        text-align: center;
+    }
+}
+
 .viewed {
 
     &__block {
         display: flex;
         flex-direction: column;
+        gap: 0.5rem;
     }
 
     &__map {
@@ -236,37 +453,12 @@ h3 {
             background-size: 16px 16px;
         }
     }
-
-    &__tripnow {
-        display: none;
-        display: block;
-        position:absolute;
-        bottom: 0;
-        left: 0;
-        min-width: 100%;
-        color: $btn-text;
-        padding: 1rem 1.5rem;
-        background-color: $btn;
-        text-decoration: none;
-        border: none;
-        cursor: pointer;
-        transition: 0.3s;
-        font-size: 1.6rem;
-        font-weight: 600;
-        z-index: -1;
-        border-radius: 0 0 2rem 2rem;
-        transform: translateX(-100%);
-    
-        &:hover {
-            transform: translateX(0);
-        }
-    }
 }
 
 .category-swiper {
     display: block;
     text-align: left;
-    padding-bottom: 4.5rem;
+    padding-bottom: 6rem;
     
 
     &__link {
@@ -278,22 +470,27 @@ h3 {
         display: block;
         box-shadow: 0 0 5rem;
         transform: scale(1);
-        
+        transition: 0.3s;
 
         &:hover {
             border: 1px solid rgba($text, 0.5);
             color: $text;
             transform: scale(1.14);
-
-            /*&__tripnow {
-                display: block;
-                color: $btn-text;
-                background-color: $btn;
-            }*/
+            transition: 0.3s;      
         }
-
-        
     }
+}
+
+.swiper-slide:hover .tripnow {
+    color: $btn-text;
+    background-color: $btn;
+    transition: 0.3s;
+}
+
+.catalog-grid__item:hover .tripnow {
+    color: $btn-text;
+    background-color: $btn;
+    transition: 0.3s;
 }
 
 .swiper {
@@ -305,8 +502,6 @@ h3 {
         z-index: 0;
         transition: 0.3s;
         padding: 17px 21px 33px 21px;
-
-        
     }
 }
 
@@ -330,18 +525,27 @@ h3 {
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 6rem 5rem;
 
+    &__map {
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+    }
+
     &__item {
         border: 1px solid rgba($text, 0.2);
         border-radius: 3rem;
-        padding: 17px 21px 20px 21px;
+        padding: 17px 19px 20px 19px;
         box-sizing: border-box;
         box-shadow: 0 0 5rem;
-        transform: scale(1); 
+        transform: scale(1);
+        transition: 0.3s;
+        height: 343px;
 
         &:hover {
             border: 1px solid rgba($text, 0.5);
             color: $text;
-            transform: scale(1.14); 
+            transform: scale(1.14);
+            transition: 0.3s;
         }
     }
 
@@ -380,17 +584,29 @@ h3 {
         text-align: center;
         max-width: 240px;
         margin: 0 auto;
+        margin-top: 8rem;
+        transition: 0.3s;
+        cursor: pointer;
 
         &:hover {
             background-color: $btn-hover;
             box-shadow: 0px 1rem 1.1rem 0.2rem rgba(93, 95, 239, 0.2);
             transition: 0.3s;
+            cursor: pointer;
         }
     }
 }
 
 .footer {
     padding-bottom: 1.6rem;
+
+    &__description {
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 136%;
+        margin-top: 2rem;
+        max-width: 142px;
+    }
 
     &__info {
         display: flex;
@@ -441,6 +657,7 @@ h3 {
         align-items: center;
         gap: 1.2rem;
         list-style: none;
+        padding-left: 0;
 
         &__fb {
             display: flex;
@@ -524,9 +741,9 @@ h3 {
     bottom: 0;
     left: 0;
     min-width: 100%;
-    color: $btn-text;
     padding: 1rem 1.5rem;
-    background-color: $btn;
+    color: transparent;
+    background-color: transparent;
     text-decoration: none;
     border: none;
     cursor: pointer;
@@ -535,9 +752,5 @@ h3 {
     font-weight: 600;
     z-index: -1;
     border-radius: 0 0 2rem 2rem;
-    transform: translateX(-100%);
-
-    &:hover {
-        transform: translateX(0);
-    }
+    transition: 0.3s;
 }
