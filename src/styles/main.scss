@@ -393,6 +393,13 @@ display: block;
     &__button {
         font-size: 3rem;
         font-weight: 600;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+            color: $btn;
+            transition: 0.3s;
+        }
     }
 
     &__person {
