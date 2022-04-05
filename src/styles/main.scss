@@ -190,10 +190,6 @@ h3 {
 
 .viewed {
 
-    &__list {
-    
-    }
-
     &__block {
         display: flex;
         flex-direction: column;
@@ -240,6 +236,31 @@ h3 {
             background-size: 16px 16px;
         }
     }
+
+    &__tripnow {
+        display: none;
+        display: block;
+        position:absolute;
+        bottom: 0;
+        left: 0;
+        min-width: 100%;
+        color: $btn-text;
+        padding: 1rem 1.5rem;
+        background-color: $btn;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        transition: 0.3s;
+        font-size: 1.6rem;
+        font-weight: 600;
+        z-index: -1;
+        border-radius: 0 0 2rem 2rem;
+        transform: translateX(-100%);
+    
+        &:hover {
+            transform: translateX(0);
+        }
+    }
 }
 
 .category-swiper {
@@ -264,34 +285,14 @@ h3 {
             color: $text;
             transform: scale(1.14);
 
-            &__tripnow {
+            /*&__tripnow {
                 display: block;
-            }
+                color: $btn-text;
+                background-color: $btn;
+            }*/
         }
 
-        &__tripnow {
-            display: none;
-            display: block;
-            position:absolute;
-            bottom: 0;
-            left: 0;
-            min-width: 100%;
-            color: $btn-text;
-            padding: 1rem 1.5rem;
-            background-color: $btn;
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-            transition: 0.3s;
-            font-size: 1.6rem;
-            font-weight: 600;
-            z-index: -1;
-            border-radius: 0 0 2rem 2rem;
-
-            &:hover {
-                display: block;
-            }
-        }
+        
     }
 }
 
@@ -304,6 +305,8 @@ h3 {
         z-index: 0;
         transition: 0.3s;
         padding: 17px 21px 33px 21px;
+
+        
     }
 }
 
@@ -532,4 +535,9 @@ h3 {
     font-weight: 600;
     z-index: -1;
     border-radius: 0 0 2rem 2rem;
+    transform: translateX(-100%);
+
+    &:hover {
+        transform: translateX(0);
+    }
 }
